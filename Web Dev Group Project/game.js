@@ -143,6 +143,16 @@ $('#restartBtn').click(() => {
   renderBoard();
 });
 
+$('#backBtn').click(() => {
+  board.fill("");
+  currentPlayer = "X";
+  gameOver = false;
+  $('#status').text("");
+  $('#gamePage').hide();
+  $('#homePage').fadeIn();
+  renderBoard();
+});
+
 $('#playBtn').click(() => {
   $('#difficultyOptions').fadeIn();
 });

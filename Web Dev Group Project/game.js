@@ -155,6 +155,7 @@ $('#backBtn').click(() => {
 
 $('#playBtn').click(() => {
   $('#difficultyOptions').fadeIn();
+  $('#playBtn').hide();
 });
 
 $('#easyBtn').click(() => {

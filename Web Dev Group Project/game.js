@@ -3,6 +3,11 @@ let currentPlayer = "X";
 let gameOver = false;
 let difficulty = "easy";
 
+let statsData = [
+  {difficulty: "Easy", wins: "0", losses: "0", winstreak: "0"},
+  {difficulty: "Hard", wins: "0", losses: "0", winstreak: "0"}
+];
+
 function renderBoard() {
   $('#board').empty();
   board.forEach((cell, index) => {

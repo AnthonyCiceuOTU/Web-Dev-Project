@@ -67,8 +67,6 @@ function renderStats(statsObj) {
   $(`#${difficulty.toLowerCase()}-winstreak`).text(statsObj.winstreak);
 }
 
-
-
 function easyAIMove() {
   const emptyIndexes = board.map((v, i) => v === "" ? i : null).filter(v => v !== null);
   const move = emptyIndexes[Math.floor(Math.random() * emptyIndexes.length)];
@@ -172,12 +170,6 @@ $('#restartBtn').click(() => {
 });
 
 $('#statsBtn').click(() => {
-  $('#status').text("");
-  $('#homePage').hide();
-  $('#statsPage').fadeIn();
-});
-
-$('#statsBtn').click(() => {
   fetch('http://localhost:3000/api/stats')
     .then(res => res.json())
     .then(data => {
@@ -191,6 +183,15 @@ $('#statsBtn').click(() => {
     });
 });
 
+$('#statsBackBtn').click(() => {
+  board.fill("");
+  currentPlayer = "X";
+  gameOver = false;
+  $('#status').text("");
+  $('#statsPage').hide();
+  $('#homePage').fadeIn();
+  renderBoard();
+});
 
 $('#gameBackBtn').click(() => {
   board.fill("");

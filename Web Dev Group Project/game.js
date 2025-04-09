@@ -143,6 +143,12 @@ $('#restartBtn').click(() => {
   renderBoard();
 });
 
+$('#statsBtn').click(() => {
+  $('#status').text("");
+  $('#homePage').hide();
+  $('#statsPage').fadeIn();
+});
+
 $('#backBtn').click(() => {
   board.fill("");
   currentPlayer = "X";

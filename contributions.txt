@@ -1,1 +1,6 @@
 oh god what am i doing
+
+todo:
+-implement stats
+-some sort of views/clientside framework
+-

@@ -149,7 +149,12 @@ $('#statsBtn').click(() => {
   $('#statsPage').fadeIn();
 });
 
-$('#backBtn').click(() => {
+$('#statsBackBtn').click(() => {
+  $('#statsPage').hide();
+  $('#homePage').fadeIn();
+});
+
+$('#gameBackBtn').click(() => {
   board.fill("");
   currentPlayer = "X";
   gameOver = false;

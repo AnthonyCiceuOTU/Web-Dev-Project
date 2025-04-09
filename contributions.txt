@@ -1,13 +1,15 @@
+Add your contributions to the project into this file 
 
 
 
-
-
+Daniel - Express.js implementation
 
 jerico - stats page
 
 todo:
--implement stats (populate dynamically)
--use ajax and database for stats
--some sort of views/clientside framework
--some sort of floating moving x and o in the background of main menu
+- implement stats (populate dynamically)
+- use ajax and database for stats
+- some sort of views/clientside framework
+- some sort of floating moving x and o in the background of main menu
+- Fill the AI prompts file
+- Create intro.mp4 walkthrough

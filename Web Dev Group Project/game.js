@@ -41,9 +41,26 @@ function checkWinner() {
     [0,4,8], [2,4,6]
   ];
   for (const [a,b,c] of wins) {
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) return board[a];
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      if (board[a] == "X") updateStats("win");
+      else updateStats("loss");
+      return board[a];
+    }
   }
   return board.includes("") ? null : "Draw";
+}
+
+function updateStats(result) {
+  fetch('http://localhost:3000/api/stats', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ difficulty, result })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('Updated stats:', data.stats);
+    // Add UI stuff here
+  });
 }
 
 function easyAIMove() {

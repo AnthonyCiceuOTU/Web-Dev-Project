@@ -46,8 +46,6 @@ function checkWinner() {
 }
 
 function updateStats(result) {
-  console.log("Sending to backend:", { difficulty, result });
-
   fetch('http://localhost:3000/api/stats', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -55,10 +53,21 @@ function updateStats(result) {
   })
   .then(res => res.json())
   .then(data => {
-    console.log('Updated stats:', data.stats);
-    // Add UI stuff here
+    console.log('Full response from server:', data);
+    renderStats(data.stats);
   });
 }
+
+function renderStats(statsObj) {
+  if (!statsObj) return;
+  
+  console.log('Updating Stats');
+  $(`#${difficulty.toLowerCase()}-wins`).text(statsObj.wins);
+  $(`#${difficulty.toLowerCase()}-losses`).text(statsObj.losses);
+  $(`#${difficulty.toLowerCase()}-winstreak`).text(statsObj.winstreak);
+}
+
+
 
 function easyAIMove() {
   const emptyIndexes = board.map((v, i) => v === "" ? i : null).filter(v => v !== null);
@@ -168,10 +177,20 @@ $('#statsBtn').click(() => {
   $('#statsPage').fadeIn();
 });
 
-$('#statsBackBtn').click(() => {
-  $('#statsPage').hide();
-  $('#homePage').fadeIn();
+$('#statsBtn').click(() => {
+  fetch('http://localhost:3000/api/stats')
+    .then(res => res.json())
+    .then(data => {
+      renderStats(data.stats);
+      $('#status').text("");
+      $('#homePage').hide();
+      $('#statsPage').fadeIn();
+    })
+    .catch(err => {
+      console.error('Failed to load stats:', err);
+    });
 });
+
 
 $('#gameBackBtn').click(() => {
   board.fill("");

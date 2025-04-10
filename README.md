@@ -26,3 +26,6 @@ open the html file
 
 -Two difficulties
 -Stats page
+-Intelligent AI on Hard difficulty
+-Tracks Win streaks
+-Stores stats in a database that persists even after restarting the server

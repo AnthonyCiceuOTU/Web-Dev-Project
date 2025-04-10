@@ -55,7 +55,7 @@ function updateStats(result) {
   })
   .then(res => res.json())
   .then(data => {
-    console.log('Full response from server:', data);
+    //console.log('Full response from server:', data);
     renderStats(data.stats);
   });
 }

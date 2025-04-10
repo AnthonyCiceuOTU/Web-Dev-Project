@@ -25,13 +25,11 @@ Run in your command line:
 `npm install express`
 
 ### 5.
-Run `node server.js` in the command line after navigating to 
+Run `npm rebuild` then `node server.js` in the command line after navigating to 
 \Web-Dev-Project\Web_Dev_Group_Project>
 
-you may need to run `npm rebuild` if Node.js isn't comptaible
-
 ### 6.
-Open the html file
+Open the html file or the Localhost
 
 ## Features
 - Two difficulties

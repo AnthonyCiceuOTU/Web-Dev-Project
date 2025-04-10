@@ -2,7 +2,7 @@ Add your contributions to the project into this file
 
 
 
-Daniel - Express.js implementation, stat updating
+Daniel - Express.js implementation, stat updating, SQL Database
 
 jerico - stats page
 

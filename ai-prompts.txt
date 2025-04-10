@@ -1,2 +1,5 @@
 List here any relevant AI prompts used in this project
 
+Prompt: "Copy the Global Stats table and create a 2nd for Local stats above it, with an extra column"
+
+Effected Code: Testing.html L.71 - L.99

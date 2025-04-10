@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 //const http = require('http');
 //const socketIo = require('socket.io');
 const Database = require('better-sqlite3');
@@ -26,6 +27,18 @@ db.prepare(`
   
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
+
+
+
+app.get('/', (req, res) => {
+  // Use path.join to create the correct absolute path
+  // __dirname = directory of server.js
+  // 'Testing.html' = the file within that directory
+  res.sendFile(path.join(__dirname, 'Testing.html'));
+});
+
+
 
 // GET stats
 app.get('/api/stats', (req, res) => {

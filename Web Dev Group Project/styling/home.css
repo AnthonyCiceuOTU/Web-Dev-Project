@@ -1,5 +1,74 @@
-#playBtn {
-    font-size: 30;
-    width: 30;
-    height: 30;
-}
+body {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  h1 {
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #homePage {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px 50px;
+    max-width: 420px;
+    width: 100%;
+    transition: transform 0.3s;
+  }
+  
+  #homePage:hover {
+    transform: translateY(-5px);
+  }
+  
+  #homePage h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+  
+  #homePage button,
+  #statsPage button,
+  #statsPageVue button,
+  #gamePage button {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+  }
+  
+  #homePage button:hover,
+  #gamePage button:hover,
+  #statsPage button:hover {
+    transform: scale(1.04);
+    opacity: 0.95;
+  }
+  
+  #difficultyOptions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #difficultyOptions button {
+    width: 48%;
+  }
+  
+  #gamePage {
+    display: none;
+    text-align: center;
+  }
+  
+  #board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 30px auto 0;
+  }

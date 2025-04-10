@@ -1,6 +1,8 @@
 # Web-Dev-Project
 Tic Tac Toe game for Web Dev Final Project
 
+![alt text](demoImage.png)
+
 ## Instructions
 ### 1.
 
@@ -26,7 +28,7 @@ Run in your command line:
 
 ### 5.
 Run `npm rebuild` then `node server.js` in the command line after navigating to 
-\Web-Dev-Project\Web_Dev_Group_Project>
+\Web-Dev-Project\Web_Dev_Group_Project
 
 ### 6.
 Open the html file or the Localhost

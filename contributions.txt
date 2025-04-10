@@ -5,7 +5,7 @@ Suryansh - Frontend, Animations, Video, Updates to Express.js
 
 Daniel - Express.js implementation, stat updating, SQL Database
 
-jerico - stats page
+Jerico - stats page, styling, buttons, reorganization, attempted Vue integration
 
 todo:
 - some sort of views/clientside framework

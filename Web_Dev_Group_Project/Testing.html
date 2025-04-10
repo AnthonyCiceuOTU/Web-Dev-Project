@@ -9,10 +9,45 @@
   <link rel="stylesheet" href="styling/home.css">
   <link rel="stylesheet" href="styling/stats.css">
   <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
 </head>
 <body class="text-center container">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.createElement('div');
+      container.style.position = 'fixed';
+      container.style.top = '0';
+      container.style.left = '0';
+      container.style.width = '100%';
+      container.style.height = '100%';
+      container.style.pointerEvents = 'none';
+      container.style.zIndex = '-1';
+      document.body.appendChild(container);
+      
+      for (let i = 0; i < 50; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.textContent = '❄';
+        snowflake.style.position = 'absolute';
+        snowflake.style.color = 'white';
+        snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        snowflake.style.left = Math.random() * 100 + '%';
+        snowflake.style.top = '-20px';
+        container.appendChild(snowflake);
+        
+        gsap.to(snowflake, {
+          y: window.innerHeight + 100,
+          x: '+=' + (Math.random() * 200 - 100),
+          rotation: Math.random() * 360,
+          duration: Math.random() * 10 + 5,
+          ease: 'none',
+          repeat: -1,
+          delay: Math.random() * 5
+        });
+      }
+    });
+
+    </script>
   <div id="homePage" class="mt-5">
     <h1>Welcome to Tic Tac Toe</h1>
     <button class="btn btn-primary btn-lg mt-3" id="playBtn">Play</button>
@@ -26,9 +61,9 @@
   </div>
 
   <div id="gamePage">
-    <h1 class="mt-5">Tic Tac Toe</h1>
+    <h1 class="mt-5" style="color: aliceblue;">Tic Tac Toe</h1>
     <div id="board"></div>
-    <p id="status" class="mt-3"></p>
+    <p id="status" class="mt-3" style="color: aliceblue;"></p>
     <button class="btn btn-primary mt-3" id="restartBtn">Restart</button>
     <button class="btn btn-secondary mt-3" id="gameBackBtn">Back</button>
   </div>

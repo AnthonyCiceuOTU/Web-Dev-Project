@@ -3,6 +3,18 @@ let currentPlayer = "X";
 let gameOver = false;
 let difficulty = "easy";
 
+//const socket = io('http://localhost:3000');
+
+/*socket.on('statsUpdated', (data) => {
+  console.log('Updated stats received:', data);
+  ogDifficulty = difficulty;
+  difficulty = "easy";
+  renderStats(data.easy);
+  difficulty = "hard";
+  renderStats(data.hard);
+  difficulty = ogDifficulty;
+});*/
+
 function renderBoard() {
   $('#board').empty();
   board.forEach((cell, index) => {

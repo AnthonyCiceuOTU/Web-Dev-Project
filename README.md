@@ -26,6 +26,7 @@ Run in your command line:
 
 ### 5.
 Run `node server.js` in the command line after navigating to 
+\Web-Dev-Project\Web_Dev_Group_Project>
 
 you may need to run `npm rebuild` if Node.js isn't comptaible
 

@@ -1,6 +1,7 @@
 Add your contributions to the project into this file 
 
 
+Suryansh - Frontend, Animations, Video, Updates to Express.js
 
 Daniel - Express.js implementation, stat updating, SQL Database
 

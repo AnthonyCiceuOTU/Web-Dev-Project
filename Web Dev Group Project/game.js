@@ -29,7 +29,7 @@ function createSVG(mark) {
   return svg.node();
 }
 
-function checkWinner() {
+function checkWinner(hypothetical) {
   const wins = [
     [0,1,2], [3,4,5], [6,7,8],
     [0,3,6], [1,4,7], [2,5,8],
@@ -37,8 +37,10 @@ function checkWinner() {
   ];
   for (const [a,b,c] of wins) {
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      if (board[a] == "X") updateStats("win");
+      if (!hypothetical) {
+        if (board[a] == "X") updateStats("win");
       else updateStats("loss");
+      }
       return board[a];
     }
   }
@@ -61,7 +63,6 @@ function updateStats(result) {
 function renderStats(statsObj) {
   if (!statsObj) return;
   
-  console.log('Updating Stats');
   $(`#${difficulty.toLowerCase()}-wins`).text(statsObj.wins);
   $(`#${difficulty.toLowerCase()}-losses`).text(statsObj.losses);
   $(`#${difficulty.toLowerCase()}-winstreak`).text(statsObj.winstreak);
@@ -99,7 +100,7 @@ const scores = {
 };
 
 function minimax(newBoard, depth, isMaximizing) {
-  let result = checkWinner();
+  let result = checkWinner(true);
   if (result !== null) return scores[result];
 
   if (isMaximizing) {
@@ -132,7 +133,7 @@ function aiMove() {
     hardAIMove();
   }
   renderBoard();
-  const result = checkWinner();
+  const result = checkWinner(false);
   if (result) {
     gameOver = true;
     $('#status').text(result === 'Draw' ? "It's a draw!" : `${result} wins!`);
@@ -146,7 +147,7 @@ function handleClick(index) {
     board[index] = currentPlayer;
     currentPlayer = "O";
     renderBoard();
-    const result = checkWinner();
+    const result = checkWinner(false);
     if (result) {
       gameOver = true;
       $('#status').text(result === 'Draw' ? "It's a draw!" : `${result} wins!`);
@@ -173,7 +174,10 @@ $('#statsBtn').click(() => {
   fetch('http://localhost:3000/api/stats')
     .then(res => res.json())
     .then(data => {
-      renderStats(data.stats);
+      difficulty = "easy";
+      renderStats(data.easy);
+      difficulty = "hard";
+      renderStats(data.hard);
       $('#status').text("");
       $('#homePage').hide();
       $('#statsPage').fadeIn();

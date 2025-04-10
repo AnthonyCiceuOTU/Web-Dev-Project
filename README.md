@@ -1,11 +1,17 @@
 # Web-Dev-Project
 Tic Tac Toe game for Web Dev Final Project
 
-[Write Instructions on how to run the project here]
+Instructions
 1.
 git clone https://github.com/AnthonyCiceuOTU/Web-Dev-Project.git
 
 2.
+Everything should be packed into the project
 
 3.
-npm install vue
+run "node server.js"
+
+4.
+open the html file
+
+[Add list of features]

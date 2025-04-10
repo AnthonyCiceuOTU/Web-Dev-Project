@@ -1,11 +1,12 @@
 Add your contributions to the project into this file 
 
+Anthony
 
 Suryansh - Frontend, Animations, Video, Updates to Express.js
 
 Daniel - Express.js implementation, stat updating, SQL Database
 
-Jerico - stats page, styling, buttons, reorganization, attempted Vue integration
+Jerico - stats page, styling, buttons, (attempted) Vue integration, readme
 
 todo:
 - some sort of views/clientside framework

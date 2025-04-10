@@ -3,3 +3,33 @@ List here any relevant AI prompts used in this project
 Prompt: "Copy the Global Stats table and create a 2nd for Local stats above it, with an extra column"
 
 Effected Code: Testing.html L.71 - L.99
+
+"How come my bootstrap styling isn't being applied?
+
+  <div id="statsPage" style="display: none;">
+    <table class="table">
+      <div class="container">
+        <tr>
+          <th>Difficulty</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Winstreak</th>
+        </tr>
+        <tr class="active">
+          <td>Easy</td>
+          <td>populate dynamically</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class=""danger>
+          <td>Hard</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </div>
+      <div>
+        <button class="btn btn-secondary mt-3" id="statsBackBtn">Back</button>
+      </div>
+    </table>
+  </div>"

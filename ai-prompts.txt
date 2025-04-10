@@ -27,3 +27,5 @@ Output: Found that the difficulties "easy" and "hard" had mismatched capitalizat
 Decision-making Prompts:
 Prompt: "What are the pros and cons between using SQLite and Firebase as a database to store the states
 Output: Gave info on both methods eventually leading to the decision to use SQLite
+
+

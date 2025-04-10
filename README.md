@@ -10,7 +10,7 @@ Run the following in a local directory where you want to install the project thr
 
 ### 2.
 
-Ensure you have Node.js and npm
+Ensure you have Node.js and npm installed
 
 ### 3.
 
@@ -25,11 +25,13 @@ Run in your command line:
 `npm install express`
 
 ### 5.
-Run `node server.js` in the command line after navigating to 
 
-you may need to run `npm rebuild` if Node.js isn't comptaible
+Run `node server.js` in the command line after navigating to Web_Dev_Group_Project
+
+you may need to run `npm rebuild` if Node.js isn't comptatible
 
 ### 6.
+
 Open the html file
 
 ## Features

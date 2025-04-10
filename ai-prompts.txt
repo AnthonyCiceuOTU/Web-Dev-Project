@@ -1,35 +1,29 @@
 List here any relevant AI prompts used in this project
 
+Generation prompts:
 Prompt: "Copy the Global Stats table and create a 2nd for Local stats above it, with an extra column"
+Affected Code: Testing.html L.71 - L.99
 
-Effected Code: Testing.html L.71 - L.99
+Prompt: "Create the appropriate math operations for the Snowflake animation using gsap:
+Affected code: Testing.html L.30 - L.45
 
-"How come my bootstrap styling isn't being applied?
+Prompt: "Create a local object to store the stats to be Posted alongside the database"
+Affected code: server.js L.23 - L.26, L.59 - L.62
 
-  <div id="statsPage" style="display: none;">
-    <table class="table">
-      <div class="container">
-        <tr>
-          <th>Difficulty</th>
-          <th>Wins</th>
-          <th>Losses</th>
-          <th>Winstreak</th>
-        </tr>
-        <tr class="active">
-          <td>Easy</td>
-          <td>populate dynamically</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr class=""danger>
-          <td>Hard</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-      </div>
-      <div>
-        <button class="btn btn-secondary mt-3" id="statsBackBtn">Back</button>
-      </div>
-    </table>
-  </div>"
+Prompt: "Modify 'renderStats()' to update both the local and global stat tables
+Affected code: game.js L.75 - L.86
+
+Troubleshooting Prompts:
+Prompt: "How come 'renderStats()' is not working properly?"
+Output: Found typo 'statObj.bestreak' on game.js L.86
+
+Prompt: "How come my bootstrap styling isn't being applied?"
+Output: found typo ' ""danger ' on Testing.html L.117,
+replaced "active" and "danger" with "table-active" and "table-danger" on L.111, L.117
+
+Prompt: "Why does game.js recieved the stats data as undefined when trying to fetch from the backend?"
+Output: Found that the difficulties "easy" and "hard" had mismatched capitalization in server.js L.24 - L.25
+
+Decision-making Prompts:
+Prompt: "What are the pros and cons between using SQLite and Firebase as a database to store the states
+Output: Gave info on both methods eventually leading to the decision to use SQLite

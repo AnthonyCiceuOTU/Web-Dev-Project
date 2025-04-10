@@ -4,9 +4,11 @@ Anthony
 
 Suryansh - Frontend, Animations, Video, Updates to Express.js
 
-Daniel - Express.js implementation, stat updating, SQL Database
+Daniel - Backend, Express.js implementation, stat updating, SQL Database
 
 Jerico - stats page, styling, buttons, (attempted) Vue integration, readme
+
+Anthony - Backend, main game functionality and some frontend too
 
 todo:
 - some sort of views/clientside framework

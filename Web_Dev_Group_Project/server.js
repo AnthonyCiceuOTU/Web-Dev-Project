@@ -84,7 +84,7 @@ app.post('/api/stats', (req, res) => {
       winstreak++, lStats.winstreak++;
       if (lStats.winstreak > lStats.beststreak) {
         lStats.beststreak = lStats.winstreak;
-        if (lStats.winstreak > beststreak) beststreak = lStats,winstreak;
+        if (lStats.winstreak > beststreak) beststreak = lStats.winstreak;
       }
     } else if (result === 'loss') {
       losses++, lStats.losses++;

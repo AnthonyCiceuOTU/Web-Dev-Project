@@ -67,18 +67,27 @@ function updateStats(result) {
   })
   .then(res => res.json())
   .then(data => {
-    //console.log('Full response from server:', data);
-    renderStats(data.stats);
+    renderStats(data.dbStats); 
+    renderStats(data.localStats, true);
   });
 }
 
-function renderStats(statsObj) {
+function renderStats(statsObj, isLocal = false) {
   if (!statsObj) return;
-  
-  $(`#${difficulty.toLowerCase()}-wins`).text(statsObj.wins);
-  $(`#${difficulty.toLowerCase()}-losses`).text(statsObj.losses);
-  $(`#${difficulty.toLowerCase()}-winstreak`).text(statsObj.winstreak);
+
+  const prefix = isLocal ? 'local-' : '';
+  const diff = difficulty.toLowerCase();
+
+  $(`#${prefix}${diff}-wins`).text(statsObj.wins);
+  $(`#${prefix}${diff}-losses`).text(statsObj.losses);
+  if (isLocal) {
+    $(`#${prefix}${diff}-winstreak`).text(statsObj.winstreak);
+  }
+  $(`#${prefix}${diff}-beststreak`).text(statsObj.beststreak);
 }
+
+
+
 
 function easyAIMove() {
   const emptyIndexes = board.map((v, i) => v === "" ? i : null).filter(v => v !== null);
@@ -187,9 +196,11 @@ $('#statsBtn').click(() => {
     .then(res => res.json())
     .then(data => {
       difficulty = "easy";
-      renderStats(data.easy);
+      renderStats(data.dbStats[difficulty]); 
+      renderStats(data.localStats[difficulty], true);
       difficulty = "hard";
-      renderStats(data.hard);
+      renderStats(data.dbStats[difficulty]); 
+      renderStats(data.localStats[difficulty], true);
       $('#status').text("");
       $('#homePage').hide();
       $('#statsPage').fadeIn();

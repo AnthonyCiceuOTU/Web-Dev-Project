@@ -56,8 +56,10 @@ app.get('/api/stats', (req, res) => {
     acc[row.difficulty] = row;
     return acc;
   }, {});
-  res.json(stats);
-  res.json(localStats);
+  res.json({
+    dbStats: stats,
+    localStats: localStats
+  });  
 });
 
 // POST stats
@@ -80,9 +82,9 @@ app.post('/api/stats', (req, res) => {
     if (result === 'win') {
       wins++, lStats.wins++;
       winstreak++, lStats.winstreak++;
-      if (winstreak > beststreak) {
-        beststreak = winstreak;
-        lStats.beststreak = lStats.winstreak
+      if (lStats.winstreak > lStats.beststreak) {
+        lStats.beststreak = lStats.winstreak;
+        if (lStats.winstreak > beststreak) beststreak = lStats,winstreak;
       }
     } else if (result === 'loss') {
       losses++, lStats.losses++;

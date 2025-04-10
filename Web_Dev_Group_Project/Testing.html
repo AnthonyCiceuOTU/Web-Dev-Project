@@ -34,7 +34,7 @@
   </div>
 
     <div id="statsPage" style="display: none;">
-      <h1 class="mt-5">Stats</h1>
+      <h1 class="mt-5">Local Stats</h1>
       <table class="table mt-4">
         <thead>
           <tr>
@@ -42,18 +42,47 @@
             <th>Wins</th>
             <th>Losses</th>
             <th>Winstreak</th>
+            <th>Best Streak</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr class="table-active">
+          <td>Easy</td>
+          <td id="local-easy-wins">0</td>
+          <td id="local-easy-losses">0</td>
+          <td id="local-easy-winstreak">0</td>
+          <td id="local-easy-beststreak">0</td>
+        </tr>
+        <tr class="table-danger">
+          <td>Hard</td>
+          <td id="local-hard-wins">0</td>
+          <td id="local-hard-losses">0</td>
+          <td id="local-hard-winstreak">0</td>
+          <td id="local-hard-beststreak">0</td>
+        </tr>
+      </tbody>
+    </table>
+      
+      <h1 class="mt-5">Global Stats</h1>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th>Difficulty</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Best Streak</th>
           </tr>
           <tr class="table-active">
             <td>Easy</td>
             <td id="easy-wins">0</td>
             <td id="easy-losses">0</td>
-            <td id="easy-winstreak">0</td>
+            <td id="easy-beststreak">0</td>
           </tr>
           <tr class="table-danger">
             <td>Hard</td>
             <td id="hard-wins">0</td>
             <td id="hard-losses">0</td>
-            <td id="hard-winstreak">0</td>
+            <td id="hard-beststreak">0</td>
           </tr>
         </thead>
       </table>

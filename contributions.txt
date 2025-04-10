@@ -7,6 +7,8 @@ Daniel - Express.js implementation, stat updating, SQL Database
 
 jerico - stats page
 
+Anthony - Backend, main game functionality and some frontend too
+
 todo:
 - some sort of views/clientside framework
 - Fill the AI prompts file

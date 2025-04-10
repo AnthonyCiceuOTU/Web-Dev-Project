@@ -8,6 +8,5 @@ jerico - stats page
 
 todo:
 - some sort of views/clientside framework
-- some sort of floating moving x and o in the background of main menu
 - Fill the AI prompts file
 - Create intro.mp4 walkthrough

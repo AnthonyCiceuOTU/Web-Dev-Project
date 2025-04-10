@@ -15,7 +15,9 @@ npm install better-sqlite3
 npm install express
 
 5.
-run "node server.js"
+run `node server.js` in the command line (make sure you're in the 'web dev group project' directory)
+
+you may need to run `npm rebuild`
 
 6.
 open the html file

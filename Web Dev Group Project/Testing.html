@@ -33,7 +33,36 @@
     <button class="btn btn-secondary mt-3" id="gameBackBtn">Back</button>
   </div>
 
-  <div id="statsPage" style="display: none;">
+  <template>
+    <div id="statsPage" style="display: none;">
+      <h1 class="mt-5">Stats</h1>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th>Difficulty</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Winstreak</th>
+          </tr>
+          <tr class="table-active">
+            <td>Easy</td>
+            <td id="easy-wins">0</td>
+            <td id="easy-losses">0</td>
+            <td id="easy-winstreak">0</td>
+          </tr>
+          <tr class="table-danger">
+            <td>Hard</td>
+            <td id="hard-wins">0</td>
+            <td id="hard-losses">0</td>
+            <td id="hard-winstreak">0</td>
+          </tr>
+        </thead>
+      </table>
+      <button class="btn btn-secondary mt-3" id="statsBackBtn">Back</button>
+    </div>
+  </template>
+
+  <div id="statsPageVue" style="display: none;">
     <h1 class="mt-5">Stats</h1>
     <table class="table mt-4">
       <thead>
@@ -60,14 +89,10 @@
     <button class="btn btn-secondary mt-3" id="statsBackBtn">Back</button>
   </div>
 
-  <div id="app" class="container">
-  add stuff
-  </div>
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="game.js"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+  <script src="statsVue.js"></script>
 </body>
 </html>

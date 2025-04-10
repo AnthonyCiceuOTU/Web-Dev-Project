@@ -15,3 +15,6 @@ run "node server.js"
 open the html file
 
 [Add list of features]
+
+-Two difficulties
+-Stats page

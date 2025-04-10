@@ -186,6 +186,7 @@ $('#statsBtn').click(() => {
   fetch('http://localhost:3000/api/stats')
     .then(res => res.json())
     .then(data => {
+      console.log("entering stats page");
       difficulty = "easy";
       renderStats(data.easy);
       difficulty = "hard";

@@ -7,7 +7,6 @@ Daniel - Express.js implementation, stat updating, SQL Database
 jerico - stats page
 
 todo:
-- use ajax and database for stats
 - some sort of views/clientside framework
 - some sort of floating moving x and o in the background of main menu
 - Fill the AI prompts file

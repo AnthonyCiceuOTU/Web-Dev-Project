@@ -20,16 +20,14 @@ db.prepare(`
     beststreak INTEGER
   )
 `).run();
-/*let stats = { Old local stats object
+let localStats = { //Old local stats object
     easy: { wins: 0, losses: 0, winstreak: 0, beststreak: 0 },
     hard: { wins: 0, losses: 0, winstreak: 0, beststreak: 0 }
-};*/
+};
   
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
-
-
 
 app.get('/', (req, res) => {
   // Use path.join to create the correct absolute path
@@ -37,8 +35,6 @@ app.get('/', (req, res) => {
   // 'Testing.html' = the file within that directory
   res.sendFile(path.join(__dirname, 'Testing.html'));
 });
-
-
 
 // GET stats
 app.get('/api/stats', (req, res) => {
@@ -61,6 +57,7 @@ app.get('/api/stats', (req, res) => {
     return acc;
   }, {});
   res.json(stats);
+  res.json(localStats);
 });
 
 // POST stats
@@ -72,6 +69,7 @@ app.post('/api/stats', (req, res) => {
     return res.status(400).json({ error: "Missing difficulty or result" });
   }
   
+  const lStats = localStats[difficulty];
   const stat = db.prepare('SELECT * FROM stats WHERE difficulty = ?').get(difficulty);
   if (stat) {
     let wins = stat.wins;
@@ -80,12 +78,15 @@ app.post('/api/stats', (req, res) => {
     let beststreak = stat.beststreak;
 
     if (result === 'win') {
-      wins++;
-      winstreak++;
-      if (winstreak > beststreak) beststreak = winstreak;
+      wins++, lStats.wins++;
+      winstreak++, lStats.winstreak++;
+      if (winstreak > beststreak) {
+        beststreak = winstreak;
+        lStats.beststreak = lStats.winstreak
+      }
     } else if (result === 'loss') {
-      losses++;
-      winstreak = 0;
+      losses++, lStats.losses++;
+      winstreak = 0, lStats.winstreak = 0;
     }
 
     // Update the stats in the database

@@ -9,9 +9,15 @@ git clone https://github.com/AnthonyCiceuOTU/Web-Dev-Project.git
 Everything should be packed into the project
 
 3.
-run "node server.js"
+npm install better-sqlite3
 
 4.
+npm install express
+
+5.
+run "node server.js"
+
+6.
 open the html file
 
 [Add list of features]
